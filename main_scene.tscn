@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cyak5hechwq1e"]
+
+[ext_resource type="PackedScene" uid="uid://bw2diw7xb8wpx" path="res://main_character.tscn" id="1_0f027"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tnm5q"]
+size = Vector3(7.7539063, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tnm5q"]
+size = Vector3(7.762085, 1, 1)
+
+[node name="Main Scene" type="Node3D" unique_id=1554151777]
+
+[node name="MainCharacter" parent="." unique_id=1411467355 instance=ExtResource("1_0f027")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33825517, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=748294992]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4839003, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=163590760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6279297, 0, 0)
+mesh = SubResource("BoxMesh_tnm5q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=767787606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5993042, 0, 0)
+shape = SubResource("BoxShape3D_tnm5q")

@@ -1,0 +1,9 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1790407651
+CharacterControler.cs::CSharpScript::391031370954157714::1790407097::0::1::::<>CharacterBody3D<><>0<>0<><>::
+gitignore.txt::TextFile::-1::1790407211::0::1::::<><><>0<>0<><>::
+icon.svg::CompressedTexture2D::6678551243370464862::1790401393::1790401436::1::::<><><>0<>0<>8e31063a0eb423eb502a97fb37d6883a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.s3tc.ctex::
+main_character.tscn::PackedScene::3986511086414084581::1790406758::0::1::::<><><>0<>0<><>::uid://c2fe07j8n56ra::::res://icon.svg<>uid://ftoh2mg48vxy::::res://CharacterControler.cs<>uid://bpahir823qbe0::::res://tax_label_node.tscn
+main_scene.tscn::PackedScene::6458034732387568792::1790407224::0::1::::<><><>0<>0<><>::uid://bw2diw7xb8wpx::::res://main_character.tscn
+TaxPopup.cs::CSharpScript::4427148021555355685::1790405611::0::1::::<>Node3D<><>0<>0<><>::
+tax_label_node.tscn::PackedScene::3439693588704493445::1790405190::0::1::::<><><>0<>0<><>::uid://b4csqmfgbtbsv::::res://TaxPopup.cs

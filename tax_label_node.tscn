@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bpahir823qbe0"]
+
+[ext_resource type="Script" uid="uid://b4csqmfgbtbsv" path="res://TaxPopup.cs" id="1_b52fi"]
+
+[node name="TaxLabelNode" type="Node3D" unique_id=1286173383 node_paths=PackedStringArray("taxLabel")]
+script = ExtResource("1_b52fi")
+taxLabel = NodePath("TaxLabel")
+duration = 1.0
+
+[node name="TaxLabel" type="Label3D" parent="." unique_id=1007854659]
+modulate = Color(0.61960787, 0, 0, 1)
+text = "Place Holder"

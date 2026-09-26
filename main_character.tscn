@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bw2diw7xb8wpx"]
+
+[ext_resource type="Texture2D" uid="uid://c2fe07j8n56ra" path="res://icon.svg" id="1_48ufq"]
+[ext_resource type="Script" uid="uid://ftoh2mg48vxy" path="res://CharacterControler.cs" id="1_wmkwl"]
+[ext_resource type="PackedScene" uid="uid://bpahir823qbe0" path="res://tax_label_node.tscn" id="2_uvl38"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wmkwl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tnm5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_48ufq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MainCharacter" type="CharacterBody3D" unique_id=1411467355 node_paths=PackedStringArray("CashLabel", "SpawnTransform")]
+script = ExtResource("1_wmkwl")
+JumpVelocity = 5.0
+Cash = 50.0
+CashLabel = NodePath("Label3D")
+SpawnTransform = NodePath("SpawnLocation")
+TaxPopupScene = ExtResource("2_uvl38")
+positiveCash = Color(0.015686275, 0.74509805, 0, 1)
+negativeCash = Color(0.61960787, 0, 0, 1)
+
+[node name="SpawnLocation" type="Node3D" parent="." unique_id=1764432421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9517324, 0)
+
+[node name="CharacterHitBox" type="CollisionShape3D" parent="." unique_id=1637035197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_wmkwl")
+
+[node name="CharacterSprite" type="AnimatedSprite3D" parent="." unique_id=15993775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+sprite_frames = SubResource("SpriteFrames_tnm5q")
+
+[node name="Player Camera" type="Camera3D" parent="." unique_id=1265721414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0900843, 3.34586)
+fov = 90.0
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1230607904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.293438, 4.0882077, 0)
+modulate = Color(0.014442784, 0.7452388, 0, 1)
+text = "Cash: "
+font_size = 100
+horizontal_alignment = 0

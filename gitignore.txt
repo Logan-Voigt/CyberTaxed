@@ -1,0 +1,48 @@
+# Godot 4.x .gitignore
+
+# Godot build output
+.godot/
+
+# Mono/C# specifics
+.mono/
+data_*/
+mono_crash.*.json
+
+# Export presets (contains sensitive path info)
+export_presets.cfg
+
+# Exported binaries
+*.apk
+*.aab
+*.ipa
+*.exe
+*.x86_64
+*.x86_32
+*.arm64
+*.arm32
+*.pck
+*.zip
+
+# macOS bundle
+*.app/
+
+# Web export
+*.html
+*.js
+*.wasm
+
+# Import cache (regenerated automatically)
+.import/
+
+# VS Code
+.vscode/
+
+# JetBrains IDEs
+.idea/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
