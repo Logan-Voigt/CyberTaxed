@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://bsmfofsuw6s34"]
+
+[ext_resource type="Texture2D" uid="uid://cy13bqqsd00wv" path="res://Assets/Martin/Cyborg_idle.png" id="1_bs8l0"]
+[ext_resource type="Script" uid="uid://cpqvg0amok2bn" path="res://Martin.cs" id="1_w0clw"]
+[ext_resource type="Texture2D" uid="uid://3bv25woq30u2" path="res://Assets/Martin/Talk.png" id="2_w0clw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u47r7"]
+atlas = ExtResource("1_bs8l0")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7l0pd"]
+atlas = ExtResource("1_bs8l0")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujthj"]
+atlas = ExtResource("1_bs8l0")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v373h"]
+atlas = ExtResource("1_bs8l0")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k780t"]
+atlas = ExtResource("2_w0clw")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykike"]
+atlas = ExtResource("2_w0clw")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ild7f"]
+atlas = ExtResource("2_w0clw")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1rni"]
+atlas = ExtResource("2_w0clw")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rwoe"]
+atlas = ExtResource("2_w0clw")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5o8i"]
+atlas = ExtResource("2_w0clw")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tnm5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u47r7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7l0pd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujthj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v373h")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k780t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykike")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ild7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1rni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rwoe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5o8i")
+}],
+"loop": 1,
+"name": &"Talking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnm5q"]
+size = Vector2(78.25, 67.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tnm5q"]
+radius = 8.5
+height = 38.0
+
+[node name="Martin" type="Node2D" unique_id=411807258 node_paths=PackedStringArray("TalkBox", "TextBox", "AnimatedSprite")]
+scale = Vector2(4, 4)
+script = ExtResource("1_w0clw")
+TalkBox = NodePath("Talk Area")
+TextBox = NodePath("ChatBubble/ChatBox")
+AnimatedSprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=137299593]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_tnm5q")
+animation = &"Idle"
+flip_h = true
+
+[node name="Talk Area" type="Area2D" parent="." unique_id=524347049]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Talk Area" unique_id=339252505]
+position = Vector2(-18, -9.5)
+shape = SubResource("RectangleShape2D_tnm5q")
+
+[node name="ChatBubble" type="Node2D" parent="." unique_id=1089265529]
+scale = Vector2(0.25, 0.25)
+
+[node name="ChatBox" type="RichTextLabel" parent="ChatBubble" unique_id=1750155992]
+offset_left = -296.0
+offset_top = -275.0
+offset_bottom = -28.0
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="LeftSide Anchor" type="Node2D" parent="ChatBubble" unique_id=1261408919]
+position = Vector2(-187, -151)
+
+[node name="RightSideAnchor" type="Node2D" parent="ChatBubble" unique_id=857940430]
+position = Vector2(34, -152)
+
+[node name="HitBox" type="StaticBody2D" parent="." unique_id=321924822]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=226125293]
+position = Vector2(11.5, 7.75)
+shape = SubResource("CapsuleShape2D_tnm5q")

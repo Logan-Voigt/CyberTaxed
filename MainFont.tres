@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" format=3 uid="uid://c4notxxd2mkxy"]
+
+[ext_resource type="FontFile" uid="uid://bf4vwpk8mnvyj" path="res://Assets/UI/Cybergame-Regular Italic.ttf" id="1_wbhpa"]
+
+[resource]
+base_font = ExtResource("1_wbhpa")
+spacing_glyph = 16

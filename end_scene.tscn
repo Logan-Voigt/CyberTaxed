@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://d13e45trr7kdb"]
+
+[ext_resource type="Texture2D" uid="uid://cw7tjarbp73dv" path="res://Assets/UI/To_Be_Continued.png" id="1_3wcc1"]
+[ext_resource type="Script" uid="uid://c8tllawha28pb" path="res://EndScene.cs" id="1_tu0sp"]
+[ext_resource type="FontFile" uid="uid://rgpsed26u4us" path="res://Assets/UI/Fortine-Regular.otf" id="2_jvrxn"]
+[ext_resource type="PackedScene" uid="uid://ct7aw1i4cp87i" path="res://main_scene.tscn" id="2_ljta4"]
+[ext_resource type="PackedScene" uid="uid://bktjvwu3kfyvx" path="res://Audio.tscn" id="3_taqub"]
+[ext_resource type="AudioStream" uid="uid://c2t5pcpp037v0" path="res://Assets/dystopia.ogg" id="4_tu0sp"]
+
+[node name="End Scene" type="Control" unique_id=970520852 node_paths=PackedStringArray("continueScreen")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tu0sp")
+continueScreen = NodePath("TextureRect")
+MainMenu = ExtResource("2_ljta4")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2040342013]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_3wcc1")
+
+[node name="People Credits" type="RichTextLabel" parent="TextureRect" unique_id=1144948524]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 723.0
+offset_right = 1235.0
+offset_bottom = 1741.0
+theme_override_fonts/normal_font = ExtResource("2_jvrxn")
+theme_override_font_sizes/normal_font_size = 80
+text = "Art Presentation: Kegan Mehrer
+Story: AiraH
+Music: Mo Memo
+Programming: Logan Voigt
+Idea Help:
+-WillamDaFlow
+-Pop183
+- Zheng Lan
+
+
+Tools Used:"
+horizontal_alignment = 1
+
+[node name="People Credits2" type="RichTextLabel" parent="TextureRect" unique_id=214583652]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 1583.0
+offset_right = 969.0
+offset_bottom = 1986.0
+theme_override_fonts/normal_font = ExtResource("2_jvrxn")
+theme_override_font_sizes/normal_font_size = 48
+text = "rider (jetbrains)           paintdotnet 
+ vegas Pro 22 
+ godot 
+ craftpix (cyberpunk)
+  FL studio"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" parent="." unique_id=1975687906 instance=ExtResource("3_taqub")]
+stream = ExtResource("4_tu0sp")

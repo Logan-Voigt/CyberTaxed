@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://wskrsktcqa01"]
+
+[ext_resource type="Script" uid="uid://dqnb0athevlri" path="res://SceneManager.cs" id="1_jo5df"]
+[ext_resource type="PackedScene" uid="uid://dq01inyvjxtnh" path="res://GameOverScene.tscn" id="2_a4gjy"]
+[ext_resource type="PackedScene" uid="uid://d13e45trr7kdb" path="res://end_scene.tscn" id="2_q0i0d"]
+
+[node name="SceneManager" type="CanvasLayer" unique_id=2039448335]
+script = ExtResource("1_jo5df")
+EndingScene = ExtResource("2_q0i0d")
+GameOverScene = ExtResource("2_a4gjy")

@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://bl75xhddx6alr"]
+
+[ext_resource type="Texture2D" uid="uid://bwfffe8qceqmj" path="res://Assets/Corpus/1/Death.png" id="1_jwpks"]
+[ext_resource type="Script" uid="uid://btugy0vo6x3rg" path="res://Corpus.cs" id="1_ubd38"]
+[ext_resource type="Texture2D" uid="uid://c1ihpev4ggw2q" path="res://Assets/Corpus/Items/Icon32_22.png" id="2_5f3ji"]
+[ext_resource type="Texture2D" uid="uid://bfx6aybb25urn" path="res://Assets/Corpus/2/Death.png" id="2_ubd38"]
+[ext_resource type="PackedScene" uid="uid://n18iusntq1ak" path="res://item_popup.tscn" id="2_uddah"]
+[ext_resource type="Texture2D" uid="uid://dyth2nmnqnmc4" path="res://Assets/Corpus/Items/Icon32_21.png" id="3_uddah"]
+[ext_resource type="Texture2D" uid="uid://cp53agkvls2kt" path="res://Assets/Corpus/3/Death.png" id="3_uj0y5"]
+[ext_resource type="Texture2D" uid="uid://fee0ttdgytwt" path="res://Assets/Corpus/6/Death.png" id="4_f4nu1"]
+[ext_resource type="Texture2D" uid="uid://bf05eyhr8wncm" path="res://Assets/Corpus/Items/Icon32_13.png" id="4_oqd5q"]
+[ext_resource type="Texture2D" uid="uid://byxuw3edf5nfx" path="res://Assets/Corpus/Items/Icon32_32.png" id="5_kp2ev"]
+[ext_resource type="Texture2D" uid="uid://bwr1gnn8v0nbx" path="res://Assets/Corpus/Items/Icon32_15.png" id="6_2txjn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlrhk"]
+atlas = ExtResource("1_jwpks")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3vpj"]
+atlas = ExtResource("2_ubd38")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5f3ji"]
+atlas = ExtResource("3_uj0y5")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uddah"]
+atlas = ExtResource("4_f4nu1")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tnm5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlrhk")
+}],
+"loop": 1,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3vpj")
+}],
+"loop": 1,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5f3ji")
+}],
+"loop": 1,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uddah")
+}],
+"loop": 1,
+"name": &"6",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnm5q"]
+size = Vector2(182, 97.5)
+
+[node name="Corpus" type="Node2D" unique_id=569069596 node_paths=PackedStringArray("CurrentCorpus", "CorpusArea", "SpawnPoint")]
+script = ExtResource("1_ubd38")
+CurrentCorpus = NodePath("AnimatedSprite2D")
+CorpusArea = NodePath("HitBox")
+ItemPopupScene = ExtResource("2_uddah")
+SpawnPoint = NodePath("SpawnSpot")
+_itemTextures = Dictionary[String, Texture2D]({
+"Common": ExtResource("2_5f3ji"),
+"Epic": ExtResource("5_kp2ev"),
+"Legendary": ExtResource("6_2txjn"),
+"Rare": ExtResource("4_oqd5q"),
+"Uncommon": ExtResource("3_uddah")
+})
+_value = Dictionary[String, float]({
+"Common": 15.0,
+"Epic": 75.0,
+"Legendary": 125.0,
+"Rare": 50.0,
+"Uncommon": 30.0
+})
+_glowColors = Dictionary[String, Color]({
+"Common": Color(0.74978, 0.74978, 0.74977994, 1),
+"Epic": Color(0.46137643, 0.0024937505, 0.99331313, 1),
+"Legendary": Color(0.8666667, 0.7529412, 0, 1),
+"Rare": Color(0.1637645, 0.40515086, 1, 1),
+"Uncommon": Color(0, 0.50980395, 0, 1)
+})
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1058184572]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_tnm5q")
+animation = &"1"
+
+[node name="HitBox" type="Area2D" parent="." unique_id=296459398]
+
+[node name="HitBoxShape" type="CollisionShape2D" parent="HitBox" unique_id=1893914764]
+position = Vector2(1, 48.25)
+shape = SubResource("RectangleShape2D_tnm5q")
+
+[node name="SpawnSpot" type="Node2D" parent="." unique_id=1643294100]
+position = Vector2(-1, 70)

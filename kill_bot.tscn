@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dxieq7rb2pji8"]
+
+[ext_resource type="Script" uid="uid://c6g0m7n2nleur" path="res://KillBot.cs" id="1_yqjrd"]
+[ext_resource type="Texture2D" uid="uid://cpn8hbm4fpro6" path="res://Assets/KillBot/Attack.png" id="2_2g3lw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_571gl"]
+radius = 185.27008
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vk2n7"]
+atlas = ExtResource("2_2g3lw")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg0m5"]
+atlas = ExtResource("2_2g3lw")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54xwe"]
+atlas = ExtResource("2_2g3lw")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s680e"]
+atlas = ExtResource("2_2g3lw")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tnm5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vk2n7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg0m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54xwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s680e")
+}],
+"loop": 1,
+"name": &"Attack",
+"speed": 10.0
+}]
+
+[node name="KillBot" type="Node2D" unique_id=1764782854 node_paths=PackedStringArray("killArea", "anomationSprite")]
+script = ExtResource("1_yqjrd")
+killArea = NodePath("Area2D")
+anomationSprite = NodePath("AnimatedSprite2D")
+speed = 500
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2033748980]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1483372035]
+shape = SubResource("CircleShape2D_571gl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1521744012]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_tnm5q")
+animation = &"Attack"

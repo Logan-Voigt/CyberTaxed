@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AGJPlaceHolder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2dc9763f332c08accc329302a91af593c625023")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2fb5f6c050ecfbdd973560b05b804d008c62a55")]
 [assembly: System.Reflection.AssemblyProductAttribute("AGJPlaceHolder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AGJPlaceHolder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

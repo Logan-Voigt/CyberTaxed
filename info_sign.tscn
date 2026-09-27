@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cn1jjh85vhup6"]
+
+[ext_resource type="Script" uid="uid://d4n3yguhos3m8" path="res://InfoSign.cs" id="1_ftkjs"]
+[ext_resource type="Texture2D" uid="uid://dsx62vo28up7c" path="res://Assets/3 Objects/Pointers/1.png" id="2_8snid"]
+[ext_resource type="FontFile" uid="uid://rgpsed26u4us" path="res://Assets/UI/Fortine-Regular.otf" id="3_8snid"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnm5q"]
+size = Vector2(354, 208)
+
+[node name="Info Sign" type="Node2D" unique_id=768867562 node_paths=PackedStringArray("InfoArea", "InfoLabel")]
+script = ExtResource("1_ftkjs")
+InfoText = "PlaceHolder"
+InfoArea = NodePath("TextShowArea")
+InfoLabel = NodePath("InfoText")
+
+[node name="InfoSign" type="Sprite2D" parent="." unique_id=320245675]
+texture_filter = 1
+position = Vector2(-5, -96)
+scale = Vector2(3, 3)
+texture = ExtResource("2_8snid")
+
+[node name="TextShowArea" type="Area2D" parent="." unique_id=899761597]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextShowArea" unique_id=1953645908]
+position = Vector2(-5, -106)
+shape = SubResource("RectangleShape2D_tnm5q")
+
+[node name="InfoText" type="RichTextLabel" parent="." unique_id=878390246]
+offset_left = -203.0
+offset_top = -355.0
+offset_right = 202.0
+offset_bottom = -210.0
+theme_override_fonts/normal_font = ExtResource("3_8snid")
+theme_override_fonts/bold_font = ExtResource("3_8snid")
+theme_override_fonts/italics_font = ExtResource("3_8snid")
+bbcode_enabled = true
+text = "PlaceHolder
+"
+horizontal_alignment = 1

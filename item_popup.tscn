@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://n18iusntq1ak"]
+
+[ext_resource type="Script" uid="uid://ci4tq621jgqrt" path="res://ItemPopup.cs" id="1_gy017"]
+[ext_resource type="Texture2D" uid="uid://dr5aqbw1og3bi" path="res://Assets/Corpus/Items/Icon32_07.png" id="2_v000w"]
+[ext_resource type="Texture2D" uid="uid://cd7px48drf8ru" path="res://PointLight.tres" id="3_v000w"]
+
+[sub_resource type="Gradient" id="Gradient_g055x"]
+offsets = PackedFloat32Array(0, 0.6686747)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tnm5q"]
+gradient = SubResource("Gradient_g055x")
+fill = 1
+fill_from = Vector2(0.47826087, 0.45652175)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tnm5q"]
+font_color = Color(0, 0.5921569, 0, 1)
+
+[node name="ItemPopup" type="Node2D" unique_id=789091021 node_paths=PackedStringArray("itemLabel", "itemSprite", "itemTexture", "itemLight")]
+script = ExtResource("1_gy017")
+itemLabel = NodePath("Value")
+itemSprite = NodePath("Item")
+itemTexture = NodePath("Glow")
+itemLight = NodePath("PointLight2D")
+duration = 1.0
+
+[node name="Glow" type="Sprite2D" parent="." unique_id=510136401]
+position = Vector2(-4.7683716e-07, 14)
+scale = Vector2(1.5, 1.5)
+texture = SubResource("GradientTexture2D_tnm5q")
+
+[node name="Item" type="Sprite2D" parent="." unique_id=654056873]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_v000w")
+
+[node name="Value" type="Label" parent="." unique_id=158028247]
+offset_left = -45.0
+offset_top = 19.0
+offset_right = 45.0
+offset_bottom = 65.0
+text = "+500$"
+label_settings = SubResource("LabelSettings_tnm5q")
+horizontal_alignment = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1161842515]
+position = Vector2(-0.49999237, 0.50001335)
+scale = Vector2(3.328125, 3.2656252)
+energy = 1.75
+texture = ExtResource("3_v000w")

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://s2q2a6d4ec7b"]
+
+[ext_resource type="Script" uid="uid://d4n3yguhos3m8" path="res://InfoSign.cs" id="1_ideak"]
+[ext_resource type="FontFile" uid="uid://rgpsed26u4us" path="res://Assets/UI/Fortine-Regular.otf" id="2_xxcha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnm5q"]
+size = Vector2(448, 212)
+
+[node name="NPC" type="Node2D" unique_id=1334301028 node_paths=PackedStringArray("InfoArea", "InfoLabel")]
+script = ExtResource("1_ideak")
+InfoArea = NodePath("Area2D")
+InfoLabel = NodePath("InfoText")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1755905442]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1750280932]
+position = Vector2(-1, -106)
+shape = SubResource("RectangleShape2D_tnm5q")
+
+[node name="InfoText" type="RichTextLabel" parent="." unique_id=2138331058]
+offset_left = -203.0
+offset_top = -198.0
+offset_right = 202.0
+offset_bottom = -53.0
+theme_override_fonts/normal_font = ExtResource("2_xxcha")
+theme_override_fonts/bold_font = ExtResource("2_xxcha")
+theme_override_fonts/italics_font = ExtResource("2_xxcha")
+bbcode_enabled = true
+text = "PlaceHolder
+"
+horizontal_alignment = 1

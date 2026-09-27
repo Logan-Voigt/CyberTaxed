@@ -1,25 +1,39 @@
-[gd_scene format=3 uid="uid://cyak5hechwq1e"]
+[gd_scene format=3 uid="uid://ct7aw1i4cp87i"]
 
-[ext_resource type="PackedScene" uid="uid://bw2diw7xb8wpx" path="res://main_character.tscn" id="1_0f027"]
+[ext_resource type="Texture2D" uid="uid://c7offib85lajm" path="res://Assets/UI/Title_Background_Text_Flattened.png" id="1_0f027"]
+[ext_resource type="Script" uid="uid://c4rgqsnfcfa1v" path="res://MainMenu.cs" id="1_d5x1h"]
+[ext_resource type="FontVariation" uid="uid://c4notxxd2mkxy" path="res://MainFont.tres" id="2_2c62f"]
+[ext_resource type="PackedScene" uid="uid://c1wmtjiqohb25" path="res://martin_talk_scene.tscn" id="2_8mm7a"]
+[ext_resource type="StyleBox" uid="uid://cs3ys264naivr" path="res://RoundedBox.tres" id="5_8mm7a"]
+[ext_resource type="PackedScene" uid="uid://bktjvwu3kfyvx" path="res://Audio.tscn" id="6_hq1ik"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_tnm5q"]
-size = Vector3(7.7539063, 1, 1)
+[node name="Main_scene" type="Control" unique_id=287125065 node_paths=PackedStringArray("Start")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_d5x1h")
+Start = NodePath("TextureRect/Button")
+LoreScene = ExtResource("2_8mm7a")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tnm5q"]
-size = Vector3(7.762085, 1, 1)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=238264358]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_0f027")
 
-[node name="Main Scene" type="Node3D" unique_id=1554151777]
+[node name="Button" type="Button" parent="TextureRect" unique_id=360851947]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 487.0
+offset_right = 812.0
+offset_bottom = 639.0
+theme_override_fonts/font = ExtResource("2_2c62f")
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = ExtResource("5_8mm7a")
+theme_override_styles/pressed = ExtResource("5_8mm7a")
+theme_override_styles/hover = ExtResource("5_8mm7a")
+theme_override_styles/focus = ExtResource("5_8mm7a")
+text = "START"
 
-[node name="MainCharacter" parent="." unique_id=1411467355 instance=ExtResource("1_0f027")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33825517, 0)
+[node name="AudioStreamPlayer" parent="." unique_id=1975687906 instance=ExtResource("6_hq1ik")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=748294992]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4839003, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=163590760]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6279297, 0, 0)
-mesh = SubResource("BoxMesh_tnm5q")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=767787606]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5993042, 0, 0)
-shape = SubResource("BoxShape3D_tnm5q")
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_button_pressed"]

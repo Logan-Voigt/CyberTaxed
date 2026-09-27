@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://di763hiaowwhb"]
+
+[ext_resource type="Script" uid="uid://b4csqmfgbtbsv" path="res://TaxPopup.cs" id="1_jtqof"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fa1tp"]
+font_size = 32
+font_color = Color(0.79607844, 0, 0, 1)
+
+[node name="TaxPopup" type="Node2D" unique_id=2115117194 node_paths=PackedStringArray("taxLabel")]
+scale = Vector2(0.175, 0.175)
+script = ExtResource("1_jtqof")
+taxLabel = NodePath("Label")
+duration = 1.0
+
+[node name="Label" type="Label" parent="." unique_id=2054290040]
+texture_filter = 1
+offset_left = -92.0
+offset_top = -24.0
+offset_right = 91.0
+offset_bottom = 21.0
+text = "placeholder"
+label_settings = SubResource("LabelSettings_fa1tp")
+horizontal_alignment = 1

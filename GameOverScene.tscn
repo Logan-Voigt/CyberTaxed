@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dq01inyvjxtnh"]
+
+[ext_resource type="Script" uid="uid://bxjq0fg0riv6d" path="res://GameOverScene.cs" id="1_4xhtf"]
+[ext_resource type="Texture2D" uid="uid://fjvstew6xxsi" path="res://Assets/UI/Death_Screen_Flattened.png" id="1_t3xaq"]
+[ext_resource type="PackedScene" uid="uid://ct7aw1i4cp87i" path="res://main_scene.tscn" id="2_3k7jc"]
+[ext_resource type="FontVariation" uid="uid://c4notxxd2mkxy" path="res://MainFont.tres" id="2_17btc"]
+[ext_resource type="StyleBox" uid="uid://d0ma47mvt7r21" path="res://LightRounded.tres" id="3_17btc"]
+
+[node name="GameOver" type="Control" unique_id=1646821231 node_paths=PackedStringArray("mainMenu")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_4xhtf")
+mainMenu = NodePath("Button")
+mainMenuScene = ExtResource("2_3k7jc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=841029921]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_t3xaq")
+
+[node name="Button" type="Button" parent="." unique_id=1639312879]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 492.0
+offset_right = 855.0
+offset_bottom = 603.0
+theme_override_fonts/font = ExtResource("2_17btc")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = ExtResource("3_17btc")
+theme_override_styles/pressed = ExtResource("3_17btc")
+theme_override_styles/hover = ExtResource("3_17btc")
+theme_override_styles/disabled = ExtResource("3_17btc")
+theme_override_styles/focus = ExtResource("3_17btc")
+text = "MAIN MENU"

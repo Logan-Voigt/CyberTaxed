@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://c0pk1q0bgaxfx"]
+
+[ext_resource type="Script" uid="uid://cc8xvnal2f6cv" path="res://MovingPlatform.cs" id="1_f8lbu"]
+[ext_resource type="Texture2D" uid="uid://cr35eqe8251ec" path="res://Assets/1 Tiles/Tile_68.png" id="2_oaxfr"]
+[ext_resource type="Texture2D" uid="uid://ci2yw4r6drwm" path="res://Assets/1 Tiles/Tile_78.png" id="3_n0cw3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g055x"]
+size = Vector2(96, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnm5q"]
+size = Vector2(96, 60)
+
+[node name="Moving Platform" type="AnimatableBody2D" unique_id=2037042942 node_paths=PackedStringArray("PayLabel", "PayArea")]
+script = ExtResource("1_f8lbu")
+PayLabel = NodePath("Label")
+PayArea = NodePath("Pay area")
+Pause = 2.0
+Duration = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=852761240]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_g055x")
+
+[node name="PlatformSprite" type="Node2D" parent="." unique_id=1664960781]
+
+[node name="Pay area" type="Area2D" parent="." unique_id=1578402281]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pay area" unique_id=498038812]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_tnm5q")
+
+[node name="platform" type="Node2D" parent="." unique_id=1099501403]
+
+[node name="Tile68" type="Sprite2D" parent="platform" unique_id=86634803]
+position = Vector2(-32, -4)
+texture = ExtResource("2_oaxfr")
+
+[node name="Tile69" type="Sprite2D" parent="platform" unique_id=1422946868]
+position = Vector2(32, -4)
+texture = ExtResource("2_oaxfr")
+
+[node name="Tile78" type="Sprite2D" parent="platform" unique_id=985227623]
+position = Vector2(0, -4)
+texture = ExtResource("3_n0cw3")
+
+[node name="Label" type="RichTextLabel" parent="." unique_id=1404076753]
+texture_filter = 1
+offset_left = -56.0
+offset_top = -127.0
+offset_right = 158.0
+offset_bottom = 11.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+bbcode_enabled = true
+text = "Placeholder Cost"
+horizontal_alignment = 1
